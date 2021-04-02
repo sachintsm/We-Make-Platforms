@@ -1,8 +1,8 @@
 package com.javamastermind.com.sms.domain;
 
 public class ErrorResponse {
-	private String errorDiscription;
 
+	private String errorDiscription;
 	private String errorCode;
 
 	public String getErrorDiscription() {

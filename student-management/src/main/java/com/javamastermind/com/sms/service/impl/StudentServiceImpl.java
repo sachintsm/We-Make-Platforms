@@ -1,34 +1,43 @@
 package com.javamastermind.com.sms.service.impl;
 
-import java.util.Set;
+import java.util.List;
+import java.util.Optional;
 
+import com.javamastermind.com.sms.Repository.StudentRepository;
 import com.javamastermind.com.sms.domain.Student;
 import com.javamastermind.com.sms.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class StudentServiceImpl implements StudentService {
 
-	@Override
-	public Set<Student> getAllStudentData() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Autowired
+    private StudentRepository studentRepository;
 
-	@Override
-	public Student findStudentById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public List<Student> getAllStudentData() {
+        return studentRepository.findAll();
+    }
 
-	@Override
-	public boolean saveOrUpdateStudentData(Student student) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    @Override
+    public Optional<Student> findStudentById(int id) {
+        return studentRepository.findById(id);
+    }
 
-	@Override
-	public boolean deleteStudentData(Student student) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    @Override
+    public boolean saveOrUpdateStudentData(Student student) {
+        return studentRepository.save(student) != null;
+    }
+
+    @Override
+    public boolean deleteStudentData(Student student) {
+        if (studentRepository.findById(student.getId()).isPresent()) {
+            studentRepository.delete(student);
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 }

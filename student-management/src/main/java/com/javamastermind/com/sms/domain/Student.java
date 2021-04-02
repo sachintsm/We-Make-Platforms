@@ -1,77 +1,114 @@
 package com.javamastermind.com.sms.domain;
 
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.Set;
 
+@Entity(name = "STUDENTS")
+@Table(name = "STUDENTS")
 public class Student {
 
-	private String firstName;
-	private String LastName;
-	private String age;
-	private String city;
-	private String height;
-	private String weight;
-	private Set<Hobby> hobbySet;
+    @Id
+    @Column(name = "student_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
-	public String getFirstName() {
-		return firstName;
-	}
+    @Column(name = "firstName")
+    @NotEmpty(message = "First Name should not be null!")
+    private String firstName;
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    @Column(name = "lastName")
+    @NotEmpty(message = "Last Name should not be null!")
+    private String LastName;
 
-	public String getLastName() {
-		return LastName;
-	}
+    @Column(name = "age")
+    private String age;
 
-	public void setLastName(String lastName) {
-		LastName = lastName;
-	}
+    @Column(name = "city")
+    private String city;
 
-	public String getAge() {
-		return age;
-	}
+    @Column(name = "height")
+    private String height;
 
-	public void setAge(String age) {
-		this.age = age;
-	}
+    @Column(name = "weight")
+    private String weight;
 
-	public String getCity() {
-		return city;
-	}
+    @Column(name = "hobbySet")
+    @ManyToMany
+    @JoinTable(
+            name = "student_hobby",
+            joinColumns = @JoinColumn(name = "student_id"),
+            inverseJoinColumns = @JoinColumn(name = "hobby_id"))
+    private Set<Hobby> hobbySet;
 
-	public void setCity(String city) {
-		this.city = city;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public String getHeight() {
-		return height;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public void setHeight(String height) {
-		this.height = height;
-	}
+    public String getFirstName() {
+        return firstName;
+    }
 
-	public String getWeight() {
-		return weight;
-	}
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-	public void setWeight(String weight) {
-		this.weight = weight;
-	}
+    public String getLastName() {
+        return LastName;
+    }
 
-	public Set<Hobby> getHobbySet() {
-		return hobbySet;
-	}
+    public void setLastName(String lastName) {
+        LastName = lastName;
+    }
 
-	public void setHobbySet(Set<Hobby> hobbySet) {
-		this.hobbySet = hobbySet;
-	}
+    public String getAge() {
+        return age;
+    }
 
-	@Override
-	public String toString() {
-		return "Student [firstName=" + firstName + ", LastName=" + LastName + ", age=" + age + ", city=" + city
-				+ ", height=" + height + ", weight=" + weight + ", hobbySet=" + hobbySet + "]";
-	}
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+    public Set<Hobby> getHobbySet() {
+        return hobbySet;
+    }
+
+    public void setHobbySet(Set<Hobby> hobbySet) {
+        this.hobbySet = hobbySet;
+    }
+
+    @Override
+    public String toString() {
+        return "Student [firstName=" + firstName + ", LastName=" + LastName + ", age=" + age + ", city=" + city
+                + ", height=" + height + ", weight=" + weight + ", hobbySet=" + hobbySet + "]";
+    }
 
 }

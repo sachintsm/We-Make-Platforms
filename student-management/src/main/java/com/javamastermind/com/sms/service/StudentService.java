@@ -1,14 +1,17 @@
 package com.javamastermind.com.sms.service;
 
-import java.util.Set;
+import java.util.List;
+import java.util.Optional;
 
 import com.javamastermind.com.sms.domain.Student;
+import org.springframework.stereotype.Service;
+
 
 public interface StudentService {
 
-	public Set<Student> getAllStudentData();
+	public List<Student> getAllStudentData();
 
-	public Student findStudentById(int id);
+	public Optional<Student> findStudentById(int id);
 
 	public boolean saveOrUpdateStudentData(Student student);
 
