@@ -1,6 +1,7 @@
 package com.javamastermind.com.sms.service.impl;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 import com.javamastermind.com.sms.Repository.StudentRepository;
@@ -12,32 +13,34 @@ import org.springframework.stereotype.Service;
 @Service
 public class StudentServiceImpl implements StudentService {
 
-    @Autowired
-    private StudentRepository studentRepository;
+	@Autowired
+	private StudentRepository studentRepository;
 
-    @Override
-    public List<Student> getAllStudentData() {
-        return studentRepository.findAll();
-    }
+	@Override
+	public List<Student> getAllStudentData() {
+		return studentRepository.findAll();
+	}
 
-    @Override
-    public Optional<Student> findStudentById(int id) {
-        return studentRepository.findById(id);
-    }
+	@Override
+	public Optional<Student> findStudentById(int id) {
+		return studentRepository.findById(id);
+	}
 
-    @Override
-    public boolean saveOrUpdateStudentData(Student student) {
-        return studentRepository.save(student) != null;
-    }
+	@Override
+	public boolean saveOrUpdateStudentData(Student student) {
+		return Objects.nonNull(studentRepository.save(student));
+	}
 
-    @Override
-    public boolean deleteStudentData(Student student) {
-        if (studentRepository.findById(student.getId()).isPresent()) {
-            studentRepository.delete(student);
-            return true;
-        } else {
-            return false;
-        }
-    }
+	@Override
+	public boolean deleteStudentData(Student student) {
+		try {
+			studentRepository.deleteById(student.getId());
+			return true;
+		} catch (Exception e) {
+
+			return false;
+		}
+
+	}
 
 }

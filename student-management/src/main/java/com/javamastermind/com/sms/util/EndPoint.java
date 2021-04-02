@@ -6,5 +6,6 @@ public class EndPoint {
 	public static final String UPDATESTUDENT = "/v1/updateStudent";
 	public static final String FINDSTUDENT = "/v1/findStudent";
 	public static final String DELETESTUDENT =  "/v1/deleteStudent";
+	
 }
 

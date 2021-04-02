@@ -1,0 +1,23 @@
+.navbar-main{
+    background-color: #ffffff;
+    height : 60px;
+
+    .navbar-button{
+        color : #ffffff;
+    }
+    .navbar-button:hover{
+        color : #ffffff;
+        cursor: pointer;
+        transition :0.5s;
+        background-color: #fcfcfc48;
+    }
+    .navbar-text{
+        margin : 10px 20px 10px 20px;
+    }
+    .navbar-text:hover{
+        cursor: pointer;
+    }
+}
+
+
+

@@ -4,8 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import com.javamastermind.com.sms.domain.Student;
-import org.springframework.stereotype.Service;
-
 
 public interface StudentService {
 

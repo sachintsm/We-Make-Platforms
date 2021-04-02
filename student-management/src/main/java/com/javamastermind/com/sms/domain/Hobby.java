@@ -3,8 +3,7 @@ package com.javamastermind.com.sms.domain;
 import javax.persistence.*;
 import java.util.Set;
 
-@Entity(name = "HOBBY")
-@Table(name = "HOBBY")
+@Entity(name = "hobby")
 public class Hobby {
 
 	@Id
@@ -12,9 +11,11 @@ public class Hobby {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
-	@Column(name = "hobby")
-	@ManyToMany(mappedBy = "hobbySet")
-	private Set<Student> name;
+	@Column(name = "name")
+	private String name;
+
+	@OneToMany(mappedBy = "hobby")
+	private Set<StudentHobby> studentHobbies;
 
 	public int getId() {
 		return id;
@@ -24,11 +25,19 @@ public class Hobby {
 		this.id = id;
 	}
 
-	public Set<Student> getName() {
+	public String getName() {
 		return name;
 	}
 
-	public void setName(Set<Student> name) {
+	public void setName(String name) {
 		this.name = name;
+	}
+
+	public Set<StudentHobby> getStudentHobbies() {
+		return studentHobbies;
+	}
+
+	public void setStudentHobbies(Set<StudentHobby> studentHobbies) {
+		this.studentHobbies = studentHobbies;
 	}
 }
