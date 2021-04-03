@@ -1,0 +1,175 @@
+<div class="container add-student">
+
+    <div class="row add-student-division-1">
+        <div class="col-md-6">
+            <p class="add-student-topic">
+                Add Student
+            </p>
+        </div>
+    </div>
+
+    <div class="row add-student-division-2">
+        <div class="card add-student-card">
+            <div class="container">
+
+                <div class="form-group">
+                    <form class="add-student-form">
+
+                        <div class="row card-div">
+                            <div class="col-md-6">
+                                <div class="row">
+
+                                    <div class="col-md-3">
+                                        <label class="add-student-card-label">
+                                            First Name
+                                        </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" placeholder="John" name="firstName"
+                                            [(ngModel)]="firstName">
+                                        <div *ngIf="firstNameError == true" class="error-message">First name is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row ">
+                                    <div class="col-md-3">
+                                        <label class="add-student-card-label">
+                                            Last Name
+                                        </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" placeholder="Smith" name="lastName"
+                                            [(ngModel)]="lastName">
+                                        <div *ngIf="lastNameError == true" class="error-message">Last name is required</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row card-div">
+                            <div class="col-md-6">
+                                <div class="row">
+
+                                    <div class="col-md-3">
+                                        <label class="add-student-card-label">
+                                            Age
+                                        </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" placeholder="25" name="age"
+                                            [(ngModel)]="age">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+                                <div class="row">
+
+                                    <div class="col-md-3">
+                                        <label class="add-student-card-label">
+                                            City
+                                        </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" placeholder="Nugegoda" name="city"
+                                            [(ngModel)]="city">
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="row card-div">
+                            <div class="col-md-6">
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="add-student-card-label">
+                                            Height
+                                        </label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" placeholder="150.78" name="height"
+                                            [(ngModel)]="height">
+                                    </div>
+                                    <div class="col-md-1">
+                                        <label class="add-student-weight">cm</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="add-student-card-label">
+                                            Wight
+                                        </label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" placeholder="50.53" name="weight"
+                                            [(ngModel)]="weight">
+                                    </div>
+                                    <div class="col-md-1">
+                                        <label class="add-student-weight">kg</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row card-div">
+                            <div class="col-md-6">
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="add-student-card-label">
+                                            Hobbies
+                                        </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" placeholder="Playing Cricket"
+                                            name="hobby" [(ngModel)]="hobby">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="add-student-card-label">
+                                    Hobbies List
+                                </label>
+
+                            </div>
+                        </div>
+
+                        <div class="row card-div">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-3">
+
+                                    </div>
+                                    <div class="col-md-9">
+                                        <button type="button" class="btn btn-primary add-hobby-btn"
+                                            (click)="addHobby()">Add Hobby</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6" *ngIf="hobbyDiv == true">
+                                <p *ngFor="let hobby of hobbies" class="hobby-list">{{hobby.name}}</p>
+                            </div>
+                        </div>
+
+                        <div class="row card-div">
+                            <button type="button" class="btn btn-success add-stundet-btn"
+                                (click)="saveStudent()">Register Student</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

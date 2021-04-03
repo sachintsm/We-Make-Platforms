@@ -16,6 +16,7 @@ import com.javamastermind.com.sms.util.EndPoint;
 
 import javax.validation.Valid;
 
+@CrossOrigin
 @RestController
 public class StudentController {
 
@@ -25,8 +26,6 @@ public class StudentController {
     // find all student
     @GetMapping(value = EndPoint.GETSTUDENT)
     public ResponseEntity<?> getAllStudentData() {
-
-        System.out.println("Hello World!");
         return new ResponseEntity<>(studentService.getAllStudentData(), HttpStatus.ACCEPTED);
     }
 
@@ -39,17 +38,20 @@ public class StudentController {
     // save Student
     @PostMapping(value = EndPoint.SAVESTUDENT)
     public ResponseEntity<?> saveStudent(@Valid @RequestBody Student student) {
-        if (Objects.nonNull(studentService.getAllStudentData())) {
+        System.out.println(student);
+        System.out.println(student.toString());
+        studentService.saveOrUpdateStudentData(student);
+//        if (Objects.nonNull(studentService.getAllStudentData())) {
             SuccessResponse successResponse = new SuccessResponse();
-            successResponse.setSuccessCode(ResponseCodes.succefullyAdded);
+            successResponse.setResponseCode(ResponseCodes.succefullyAdded);
             successResponse.setMessage("Student data successfully saved!");
             return new ResponseEntity<>(successResponse, HttpStatus.ACCEPTED);
-        } else {
-            ErrorResponse errorResponse = new ErrorResponse();
-            errorResponse.setErrorCode(ResponseCodes.failiureToAdd);
-            errorResponse.setErrorDiscription("Student data saving unsuccessful!");
-            return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
-        }
+//        } else {
+//            ErrorResponse errorResponse = new ErrorResponse();
+//            errorResponse.setResponseCode(ResponseCodes.failiureToAdd);
+//            errorResponse.setMessage("Student data saving unsuccessful!");
+//            return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+//        }
     }
 
     // delete student
@@ -57,13 +59,13 @@ public class StudentController {
     public ResponseEntity<?> deleteStudent(Student student) {
         if (!studentService.deleteStudentData(student)) {
             SuccessResponse successResponse = new SuccessResponse();
-            successResponse.setSuccessCode(ResponseCodes.successfullyDeleted);
+            successResponse.setResponseCode(ResponseCodes.successfullyDeleted);
             successResponse.setMessage("Student successfully deleted!");
             return new ResponseEntity<>(successResponse, HttpStatus.ACCEPTED);
         } else {
             ErrorResponse errorResponse = new ErrorResponse();
-            errorResponse.setErrorCode(ResponseCodes.failiureToDelete);
-            errorResponse.setErrorDiscription("Student deletion unsuccessful!");
+            errorResponse.setResponseCode(ResponseCodes.failiureToDelete);
+            errorResponse.setMessage("Student deletion unsuccessful!");
             return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
         }
     }
@@ -73,7 +75,7 @@ public class StudentController {
     public ResponseEntity<?> updateStudent(@RequestBody Student student) {
         if (Objects.nonNull(studentService.saveOrUpdateStudentData(student))) {
             SuccessResponse successResponse = new SuccessResponse();
-            successResponse.setSuccessCode(ResponseCodes.successfullyUpdated);
+            successResponse.setResponseCode(ResponseCodes.successfullyUpdated);
             successResponse.setMessage("Student successfully updated!");
 
             Set<Object> studentSet = new HashSet<>();
@@ -83,8 +85,8 @@ public class StudentController {
             return new ResponseEntity<>(successResponse, HttpStatus.ACCEPTED);
         } else {
             ErrorResponse errorResponse = new ErrorResponse();
-            errorResponse.setErrorCode(ResponseCodes.failiureToUpdate);
-            errorResponse.setErrorDiscription("Invalid student data!");
+            errorResponse.setResponseCode(ResponseCodes.failiureToUpdate);
+            errorResponse.setMessage("Invalid student data!");
 
             return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
         }

@@ -1,116 +1,121 @@
 package com.javamastermind.com.sms.domain;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.util.Set;
 
-@Entity(name = "student")
+@Entity
+@Table(name = "student")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,  property = "id")
 public class Student {
 
-	@Id
-	@Column(name = "student_id")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+    @Id
+    @Column(name = "student_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
-	@Column(name = "firstName")
-	@NotEmpty(message = "First Name should not be null!")
-	private String firstName;
+    @Column(name = "firstName")
+    @NotEmpty(message = "First Name should not be null!")
+    private String firstName;
 
-	@Column(name = "lastName")
-	@NotEmpty(message = "Last Name should not be null!")
-	private String LastName;
+    @Column(name = "lastName")
+    @NotEmpty(message = "Last Name should not be null!")
+    private String LastName;
 
-	@Column(name = "age")
-	private String age;
+    @Column(name = "age")
+    private String age;
 
-	@Column(name = "city")
-	private String city;
+    @Column(name = "city")
+    private String city;
 
-	@Column(name = "height")
-	private String height;
+    @Column(name = "height")
+    private String height;
 
-	@Column(name = "weight")
-	private String weight;
+    @Column(name = "weight")
+    private String weight;
 
-	@Column(name = "hobbySet")
-	@OneToMany(mappedBy = "student")
-	private Set<StudentHobby> studentHobbies;
+    @Column(name = "hobbySet")
+    @ManyToMany(targetEntity = Hobby.class, cascade = CascadeType.ALL)
+    private Set<Hobby> hobbies;
 
-	public int getId() {
-		return id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public String getFirstName() {
-		return firstName;
-	}
+    public String getFirstName() {
+        return firstName;
+    }
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-	public String getLastName() {
-		return LastName;
-	}
+    public String getLastName() {
+        return LastName;
+    }
 
-	public void setLastName(String lastName) {
-		LastName = lastName;
-	}
+    public void setLastName(String lastName) {
+        LastName = lastName;
+    }
 
-	public String getAge() {
-		return age;
-	}
+    public String getAge() {
+        return age;
+    }
 
-	public void setAge(String age) {
-		this.age = age;
-	}
+    public void setAge(String age) {
+        this.age = age;
+    }
 
-	public String getCity() {
-		return city;
-	}
+    public String getCity() {
+        return city;
+    }
 
-	public void setCity(String city) {
-		this.city = city;
-	}
+    public void setCity(String city) {
+        this.city = city;
+    }
 
-	public String getHeight() {
-		return height;
-	}
+    public String getHeight() {
+        return height;
+    }
 
-	public void setHeight(String height) {
-		this.height = height;
-	}
+    public void setHeight(String height) {
+        this.height = height;
+    }
 
-	public String getWeight() {
-		return weight;
-	}
+    public String getWeight() {
+        return weight;
+    }
 
-	public void setWeight(String weight) {
-		this.weight = weight;
-	}
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
 
-	public Set<StudentHobby> getStudentHobbies() {
-		return studentHobbies;
-	}
+    public Set<Hobby> getHobbies() {
+        return hobbies;
+    }
 
-	public void setStudentHobbies(Set<StudentHobby> studentHobbies) {
-		this.studentHobbies = studentHobbies;
-	}
+    public void setHobbies(Set<Hobby> hobbies) {
+        this.hobbies = hobbies;
+    }
 
-	@Override
-	public String toString() {
-		return "Student{" +
-				"id=" + id +
-				", firstName='" + firstName + '\'' +
-				", LastName='" + LastName + '\'' +
-				", age='" + age + '\'' +
-				", city='" + city + '\'' +
-				", height='" + height + '\'' +
-				", weight='" + weight + '\'' +
-				", studentHobbies=" + studentHobbies +
-				'}';
-	}
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", LastName='" + LastName + '\'' +
+                ", age='" + age + '\'' +
+                ", city='" + city + '\'' +
+                ", height='" + height + '\'' +
+                ", weight='" + weight + '\'' +
+                ", hobbies=" + hobbies +
+                '}';
+    }
 }

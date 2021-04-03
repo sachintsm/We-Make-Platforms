@@ -1,9 +1,14 @@
 package com.javamastermind.com.sms.domain;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
 import java.util.Set;
 
-@Entity(name = "hobby")
+@Entity
+@Table(name = "hobby")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,  property = "id")
 public class Hobby {
 
 	@Id
@@ -14,8 +19,8 @@ public class Hobby {
 	@Column(name = "name")
 	private String name;
 
-	@OneToMany(mappedBy = "hobby")
-	private Set<StudentHobby> studentHobbies;
+	@ManyToMany(targetEntity = Student.class, mappedBy = "hobbies", cascade = CascadeType.ALL)
+	private Set<Student> studentHobbies;
 
 	public int getId() {
 		return id;
@@ -33,11 +38,11 @@ public class Hobby {
 		this.name = name;
 	}
 
-	public Set<StudentHobby> getStudentHobbies() {
+	public Set<Student> getStudentHobbies() {
 		return studentHobbies;
 	}
 
-	public void setStudentHobbies(Set<StudentHobby> studentHobbies) {
+	public void setStudentHobbies(Set<Student> studentHobbies) {
 		this.studentHobbies = studentHobbies;
 	}
 }

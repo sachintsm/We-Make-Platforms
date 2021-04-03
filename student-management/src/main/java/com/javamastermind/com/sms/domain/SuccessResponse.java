@@ -3,38 +3,19 @@ package com.javamastermind.com.sms.domain;
 import java.util.Set;
 
 public class SuccessResponse {
-	private String Message;
-	private String SuccessCode;
-	private Set<Object> ResponseObject;
-
-	public String getMessage() {
-		return Message;
-	}
+	private String message;
+	private String responseCode;
+	private Set<Object> responseObject;
 
 	public void setMessage(String message) {
-		Message = message;
+		this.message = message;
 	}
 
-	public String getSuccessCode() {
-		return SuccessCode;
-	}
-
-	public void setSuccessCode(String successCode) {
-		SuccessCode = successCode;
-	}
-
-	public Set<Object> getResponseObject() {
-		return ResponseObject;
+	public void setResponseCode(String responseCode) {
+		this.responseCode = responseCode;
 	}
 
 	public void setResponseObject(Set<Object> responseObject) {
-		ResponseObject = responseObject;
+		this.responseObject = responseObject;
 	}
-
-	@Override
-	public String toString() {
-		return "SucessResponse [Message=" + Message + ", SuccessCode=" + SuccessCode + ", ResponseObject="
-				+ ResponseObject + "]";
-	}
-
 }

@@ -1,0 +1,58 @@
+.student-data {
+    min-height: 600px;
+
+    .student-division-1{
+        margin-top: 50px;
+    }
+    .student-topic{
+        color: #4e4e4e;
+        font-size: 30px;
+        font-weight: 500;
+
+    }
+
+    .student-table-title-card {
+        width: 100%;
+        background-color: #287ffa;
+        
+    }
+    .student-table-title {
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 500;
+        padding:  10px 5px 5px 5px;
+    }
+
+
+    .student-table-data-card{
+        margin-top: 5px;
+    }
+
+    .student-table-data-card:hover{
+        cursor: pointer;
+        background-color: #0167ff1c;
+        transition: 0.5s;
+    }
+
+    .student-table-data {
+        color: #696969;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 5px 5px 0px 5px;
+    }
+
+    .add-student-btn{
+        float: right;
+        text-align: center;
+    }
+    .student-action-btn-div{
+        padding: 5px;
+    }
+    .student-action-btn{
+        height: 30px;   
+        width : 100%;
+    }
+    .stundet-label-text{
+        margin-top: -10px;
+    }
+}

@@ -1,0 +1,55 @@
+.add-student {
+    min-height: 600px;
+
+    .add-student-division-1 {
+        margin-top: 50px;
+
+        .add-student-topic {
+            color: #4e4e4e;
+            font-size: 30px;
+            font-weight: 500;
+        }
+    }
+    .error-message{
+        color: red;
+        font-size: 12px;
+    }
+
+    .add-student-division-2 {
+        .add-student-card {
+            margin: auto;
+            width: 80%;
+        }
+
+        .card-div {
+            margin-top: 15px;
+        }
+        .add-student-card-label {
+            font-size: 16px;
+            color: #4e4e4e;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+        .add-student-form {
+            padding: 20px 10px 10px 10px;
+        }
+        .add-student-weight {
+            color: #818181;
+            margin-top: 10px;
+            margin-left: -20px;
+        }
+        .add-hobby-btn {
+            width: 100%;
+        }
+
+        .add-stundet-btn {
+            width: 50%;
+            margin: auto;
+            margin-top: 30px;
+        }
+        .hobby-list {
+            margin-left: 50px;
+            color: #868686;
+        }
+    }
+}
