@@ -5,12 +5,14 @@ import { HomeComponent } from './components/home/home.component';
 import { StudentComponent } from './components/student/student.component';
 import { AddStudentComponent } from './components/add-student/add-student.component';
 import { StudentDataComponent } from './components/student-data/student-data.component';
+import { EditStudentComponent } from './components/edit-student/edit-student.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'student', component: StudentComponent },
   { path: 'add-student', component: AddStudentComponent },
-  { path: 'student-data', component: StudentDataComponent }
+  { path: 'student-data/:id', component: StudentDataComponent },
+  { path: 'edit-student/:id', component: EditStudentComponent }
 
 ];
 

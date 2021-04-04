@@ -3,7 +3,7 @@
     <div class="row add-student-division-1">
         <div class="col-md-6">
             <p class="add-student-topic">
-                Add Student
+                Student Data Form
             </p>
         </div>
     </div>
@@ -11,7 +11,6 @@
     <div class="row add-student-division-2">
         <div class="card add-student-card">
             <div class="container">
-
                 <div class="form-group">
                     <form class="add-student-form">
 
@@ -26,8 +25,9 @@
                                     </div>
                                     <div class="col-md-9">
                                         <input type="text" class="form-control" placeholder="John" name="firstName"
-                                            [(ngModel)]="firstName">
-                                        <div *ngIf="firstNameError == true" class="error-message">First name is required</div>
+                                            [(ngModel)]="firstName" value="{{$any(studentData).firstName}}">
+                                        <div *ngIf="firstNameError == true" class="error-message">First name is required
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -40,8 +40,9 @@
                                     </div>
                                     <div class="col-md-9">
                                         <input type="text" class="form-control" placeholder="Smith" name="lastName"
-                                            [(ngModel)]="lastName">
-                                        <div *ngIf="lastNameError == true" class="error-message">Last name is required</div>
+                                            [(ngModel)]="lastName" value="{{$any(studentData).lastName}}">
+                                        <div *ngIf="lastNameError == true" class="error-message">Last name is required
+                                        </div>
 
                                     </div>
                                 </div>
@@ -60,7 +61,7 @@
                                     </div>
                                     <div class="col-md-9">
                                         <input type="text" class="form-control" placeholder="25" name="age"
-                                            [(ngModel)]="age">
+                                            [(ngModel)]="age" value="{{$any(studentData).age}}">
                                     </div>
                                 </div>
                             </div>
@@ -75,7 +76,7 @@
                                     </div>
                                     <div class="col-md-9">
                                         <input type="text" class="form-control" placeholder="Nugegoda" name="city"
-                                            [(ngModel)]="city">
+                                            [(ngModel)]="city" value="{{$any(studentData).city}}">
                                     </div>
                                 </div>
 
@@ -94,7 +95,7 @@
                                     </div>
                                     <div class="col-md-8">
                                         <input type="text" class="form-control" placeholder="150.78" name="height"
-                                            [(ngModel)]="height">
+                                            [(ngModel)]="height" value="{{$any(studentData).height}}">
                                     </div>
                                     <div class="col-md-1">
                                         <label class="add-student-weight">cm</label>
@@ -111,7 +112,7 @@
                                     </div>
                                     <div class="col-md-8">
                                         <input type="text" class="form-control" placeholder="50.53" name="weight"
-                                            [(ngModel)]="weight">
+                                            [(ngModel)]="weight" value="{{$any(studentData).weight}}">
                                     </div>
                                     <div class="col-md-1">
                                         <label class="add-student-weight">kg</label>
@@ -160,11 +161,12 @@
                             <div class="col-md-6" *ngIf="hobbyDiv == true">
                                 <p *ngFor="let hobby of hobbies" class="hobby-list">{{hobby.name}}</p>
                             </div>
+                           
                         </div>
 
                         <div class="row card-div">
                             <button type="button" class="btn btn-success add-stundet-btn"
-                                (click)="saveStudent()">Register Student</button>
+                                (click)="saveStudent()">Submit Student Data</button>
                         </div>
 
                     </form>

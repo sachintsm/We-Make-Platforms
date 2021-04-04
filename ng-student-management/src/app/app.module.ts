@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { StudentComponent } from './components/student/student.component';
 import { StudentDataComponent } from './components/student-data/student-data.component';
 import { AddStudentComponent } from './components/add-student/add-student.component';
+import { EditStudentComponent } from './components/edit-student/edit-student.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AddStudentComponent } from './components/add-student/add-student.compon
     FooterComponent,
     StudentComponent,
     StudentDataComponent,
-    AddStudentComponent
+    AddStudentComponent,
+    EditStudentComponent
   ],
   imports: [
     BrowserModule,

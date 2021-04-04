@@ -38,26 +38,24 @@ public class StudentController {
     // save Student
     @PostMapping(value = EndPoint.SAVESTUDENT)
     public ResponseEntity<?> saveStudent(@Valid @RequestBody Student student) {
-        System.out.println(student);
-        System.out.println(student.toString());
-        studentService.saveOrUpdateStudentData(student);
-//        if (Objects.nonNull(studentService.getAllStudentData())) {
+
+        if (studentService.saveOrUpdateStudentData(student)) {
             SuccessResponse successResponse = new SuccessResponse();
             successResponse.setResponseCode(ResponseCodes.succefullyAdded);
             successResponse.setMessage("Student data successfully saved!");
             return new ResponseEntity<>(successResponse, HttpStatus.ACCEPTED);
-//        } else {
-//            ErrorResponse errorResponse = new ErrorResponse();
-//            errorResponse.setResponseCode(ResponseCodes.failiureToAdd);
-//            errorResponse.setMessage("Student data saving unsuccessful!");
-//            return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
-//        }
+        } else {
+            ErrorResponse errorResponse = new ErrorResponse();
+            errorResponse.setResponseCode(ResponseCodes.failiureToAdd);
+            errorResponse.setMessage("Student data saving unsuccessful!");
+            return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+        }
     }
 
     // delete student
     @DeleteMapping(value = EndPoint.DELETESTUDENT)
-    public ResponseEntity<?> deleteStudent(Student student) {
-        if (!studentService.deleteStudentData(student)) {
+    public ResponseEntity<?> deleteStudent(@RequestParam("id") int id) {
+        if (studentService.deleteStudentData(id)) {
             SuccessResponse successResponse = new SuccessResponse();
             successResponse.setResponseCode(ResponseCodes.successfullyDeleted);
             successResponse.setMessage("Student successfully deleted!");
@@ -73,6 +71,7 @@ public class StudentController {
     // update student
     @PutMapping(value = EndPoint.UPDATESTUDENT)
     public ResponseEntity<?> updateStudent(@RequestBody Student student) {
+        System.out.println(student);
         if (Objects.nonNull(studentService.saveOrUpdateStudentData(student))) {
             SuccessResponse successResponse = new SuccessResponse();
             successResponse.setResponseCode(ResponseCodes.successfullyUpdated);

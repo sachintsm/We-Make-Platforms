@@ -18,21 +18,21 @@
                 <div class="col-md-2">
                     <label class="student-table-title">Last Name</label>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-1">
                     <label class="student-table-title">Age</label>
                 </div>
                 <div class="col-md-2">
                     <label class="student-table-title">City</label>
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-2">
                     <label class="student-table-title">Height(cm)</label>
 
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-2">
                     <label class="student-table-title">Weight(kg)</label>
                 </div>
 
-                <div class="col-md-2">
+                <div class="col-md-1">
                     <label class="student-table-title">Actions</label>
                 </div>
 
@@ -41,36 +41,42 @@
     </div>
 
     <div class="student-division-3">
+        <div class="container card student-table-data-card" *ngIf="noData == true">
+            <div class="row">
+                <p class="student-noData">No data is available!</p>
+            </div>
+        </div>
         <div class="container card student-table-data-card" *ngFor="let stu of students">
-            <div class="row" >
+            <div class="row">
                 <div class="col-md-2">
                     <label class="student-table-data">{{stu.firstName}}</label>
                 </div>
                 <div class="col-md-2">
                     <label class="student-table-data">{{stu.lastName}}</label>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-1">
                     <label class="student-table-data">{{stu.age}}</label>
                 </div>
                 <div class="col-md-2">
                     <label class="student-table-data">{{stu.city}}</label>
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-2">
                     <label class="student-table-data">{{stu.height}}</label>
 
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-2">
                     <label class="student-table-data">{{stu.weight}}</label>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-1">
                     <div class="row">
-                        <div class="col-md-6  student-action-btn-div">
-                            <button class="btn btn-success student-action-btn" (click)="editStudent(stu.id)"><label
-                                    class="stundet-label-text">Edit</label></button>
+                        <div class="col-md-4  student-action-btn-div">
+                            <i class="fas fa-eye student-action-btn-view" (click)="viewStudent(stu.id)"></i>
                         </div>
-                        <div class="col-md-6  student-action-btn-div">
-                            <button class="btn btn-danger student-action-btn" (click)="deleteStudent(stu.id)"><label
-                                    class="stundet-label-text">Delete</label></button>
+                        <div class="col-md-4  student-action-btn-div">
+                            <i class="fas fa-edit student-action-btn-edit" (click)="editStudent(stu.id)"></i>
+                        </div>
+                        <div class="col-md-4  student-action-btn-div">
+                            <i class="fas fa-trash-alt student-action-btn-delete" (click)="deleteStudent(stu.id)"></i>
                         </div>
                     </div>
 

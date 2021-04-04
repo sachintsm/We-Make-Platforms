@@ -13,5 +13,5 @@ public interface StudentService {
 
 	public boolean saveOrUpdateStudentData(Student student);
 
-	public boolean deleteStudentData(Student student);
+	public boolean deleteStudentData(int id);
 }

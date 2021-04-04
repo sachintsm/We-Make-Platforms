@@ -1,13 +1,11 @@
 .home-main {
-
-  background: linear-gradient(rgba(43, 43, 43, 0.534), rgba(0, 0, 0, 0.445)),
+  background: linear-gradient(rgba(43, 43, 43, 0), rgba(0, 0, 0, 0.63)),
     url("../../../assets/backgrounds/homepage-background.jpg");
   min-height: 640px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   // margin-top: -60px;
-
 
   .home-topic {
     margin-top: 150px;
@@ -19,12 +17,22 @@
     font-weight: 500;
   }
 
-  .home-description{
-    margin: -100px 50px 0px 50px;
+  .home-description {
+    margin: 0px 20px 0px 0px;
     font-size: 20px;
     color: #ffffff;
     display: block;
-    text-align: center;
+    text-align: justify;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 500;
+
+  }
+  .home-description-2 {
+    margin: 0px 0px 0px 20px;
+    font-size: 20px;
+    color: #ffffff;
+    display: block;
+    text-align: justify;
     font-family: "Times New Roman", Times, serif;
     font-weight: 500;
   }

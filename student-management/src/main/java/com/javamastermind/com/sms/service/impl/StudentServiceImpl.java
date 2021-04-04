@@ -32,9 +32,9 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	public boolean deleteStudentData(Student student) {
+	public boolean deleteStudentData(int id) {
 		try {
-			studentRepository.deleteById(student.getId());
+			studentRepository.deleteById(id);
 			return true;
 		} catch (Exception e) {
 

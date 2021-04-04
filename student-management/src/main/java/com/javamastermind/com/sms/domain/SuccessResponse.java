@@ -7,6 +7,18 @@ public class SuccessResponse {
 	private String responseCode;
 	private Set<Object> responseObject;
 
+	public String getMessage() {
+		return message;
+	}
+
+	public String getResponseCode() {
+		return responseCode;
+	}
+
+	public Set<Object> getResponseObject() {
+		return responseObject;
+	}
+
 	public void setMessage(String message) {
 		this.message = message;
 	}

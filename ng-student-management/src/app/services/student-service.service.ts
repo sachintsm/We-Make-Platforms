@@ -9,10 +9,9 @@ export class StudentServiceService {
 
   findAllStudentsUri = 'http://localhost:8080/v1/getAllStudents';
   findStudentUri = 'http://localhost:8080/v1/findStudent';
-  deleteStudentUri = 'http://localhost:8080/v1/getAllStudents';
-  updateStudentUri = 'http://localhost:8080/v1/deleteStudent';
+  deleteStudentUri = 'http://localhost:8080/v1/deleteStudent';
+  updateStudentUri = 'http://localhost:8080/v1/updateStudent';
   saveStudentUri = 'http://localhost:8080/v1/saveStudent';
-
 
   constructor(
     private http: HttpClient,
@@ -23,15 +22,18 @@ export class StudentServiceService {
   }
 
   getStudent(id) {
-    return this.http.get(this.findStudentUri + "/?" + id);
+    return this.http.get(this.findStudentUri + "/?id=" + id);
   }
 
   deleteStudent(id) {
-    return this.http.delete(this.deleteStudentUri);
+    return this.http.delete(this.deleteStudentUri + "/?id=" + id);
   }
 
-  updateStudent(id, student) {
-    return this.http.put(this.updateStudentUri, student);
+  updateStudent(student) {
+    let headers = new HttpHeaders();
+    headers = headers.append('Content-Type', 'application/json; charset=utf-8');
+
+    return this.http.put(this.updateStudentUri, student, { headers: headers });
   }
 
   saveStudent(student) {
