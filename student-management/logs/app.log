@@ -1,0 +1,78 @@
+2021-04-04 18:44:57,092 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-04-04 18:44:57,125 INFO c.j.c.s.StudentManagementApplication [restartedMain] Starting StudentManagementApplication using Java 1.8.0_111 on DESKTOP-ILJ5H6O with PID 18464 (C:\Users\sachi_b3cgl2g\OneDrive\Desktop\We Make Platforms\student-management\target\classes started by sachi_b3cgl2g in C:\Users\sachi_b3cgl2g\OneDrive\Desktop\We Make Platforms\student-management)
+2021-04-04 18:44:57,128 INFO c.j.c.s.StudentManagementApplication [restartedMain] No active profile set, falling back to default profiles: default
+2021-04-04 18:44:57,175 INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-04 18:44:57,176 INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-04 18:44:57,793 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-04-04 18:44:57,928 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 113 ms. Found 1 JPA repository interfaces.
+2021-04-04 18:44:58,457 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port(s): 8080 (http)
+2021-04-04 18:44:58,463 INFO o.a.c.h.Http11NioProtocol [restartedMain] Initializing ProtocolHandler ["http-nio-8080"]
+2021-04-04 18:44:58,464 INFO o.a.c.c.StandardService [restartedMain] Starting service [Tomcat]
+2021-04-04 18:44:58,464 INFO o.a.c.c.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-04-04 18:44:58,540 INFO o.a.c.c.C.[.[.[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2021-04-04 18:44:58,541 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1364 ms
+2021-04-04 18:44:58,678 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 5.4.29.Final
+2021-04-04 18:44:58,769 INFO o.h.a.c.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-04-04 18:44:58,849 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2021-04-04 18:44:58,964 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2021-04-04 18:44:58,975 INFO o.h.d.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2021-04-04 18:44:59,538 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-04 18:44:59,546 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-04 18:44:59,558 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2021-04-04 18:44:59,673 INFO o.h.e.i.StatisticalLoggingSessionEventListener [restartedMain] Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-04-04 18:44:59,673 INFO o.h.e.i.StatisticalLoggingSessionEventListener [restartedMain] Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-04-04 18:44:59,710 INFO o.h.e.i.StatisticalLoggingSessionEventListener [restartedMain] Session Metrics {
+    0 nanoseconds spent acquiring 0 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    0 nanoseconds spent preparing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2021-04-04 18:44:59,776 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-04 18:44:59,851 INFO o.s.s.c.ThreadPoolTaskExecutor [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-04 18:45:00,182 INFO o.a.c.h.Http11NioProtocol [restartedMain] Starting ProtocolHandler ["http-nio-8080"]
+2021-04-04 18:45:00,197 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-04 18:45:00,208 INFO c.j.c.s.StudentManagementApplication [restartedMain] Started StudentManagementApplication in 3.644 seconds (JVM running for 5.071)
+2021-04-04 18:45:02,104 INFO o.a.c.c.C.[.[.[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-04 18:45:02,105 INFO o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-04-04 18:45:02,106 INFO o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2021-04-04 18:45:02,162 INFO c.j.c.s.c.StudentController [http-nio-8080-exec-1] Request initiate to get all student. Url /v1/getAllStudents
+2021-04-04 18:45:02,398 INFO o.h.e.i.StatisticalLoggingSessionEventListener [http-nio-8080-exec-1] Session Metrics {
+    308500 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    4341600 nanoseconds spent preparing 32 JDBC statements;
+    13823300 nanoseconds spent executing 32 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    14500 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}

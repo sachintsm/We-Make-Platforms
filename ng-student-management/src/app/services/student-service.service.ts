@@ -1,17 +1,19 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { environment } from '../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentServiceService {
 
-  findAllStudentsUri = 'http://localhost:8080/v1/getAllStudents';
-  findStudentUri = 'http://localhost:8080/v1/findStudent';
-  deleteStudentUri = 'http://localhost:8080/v1/deleteStudent';
-  updateStudentUri = 'http://localhost:8080/v1/updateStudent';
-  saveStudentUri = 'http://localhost:8080/v1/saveStudent';
+  baseUrl = environment.baseUrl;
+
+  findAllStudentsUri = this.baseUrl + 'v1/getAllStudents';
+  findStudentUri = this.baseUrl + 'v1/findStudent';
+  deleteStudentUri = this.baseUrl + 'v1/deleteStudent';
+  updateStudentUri = this.baseUrl + 'v1/updateStudent';
+  saveStudentUri = this.baseUrl + 'v1/saveStudent';
 
   constructor(
     private http: HttpClient,

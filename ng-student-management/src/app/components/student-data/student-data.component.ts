@@ -22,7 +22,7 @@ interface student {
 })
 export class StudentDataComponent implements OnInit {
   studentData: student[] = [];
-
+  hobbies = [];
   constructor(
     private activatedRoute: ActivatedRoute,
     private studentService: StudentServiceService
@@ -35,7 +35,7 @@ export class StudentDataComponent implements OnInit {
 
     this.studentService.getStudent(studentId).subscribe((res: any) => {
       this.studentData = res;
-      console.log(this.studentData);
+      this.hobbies = res.hobbies
 
     })
 

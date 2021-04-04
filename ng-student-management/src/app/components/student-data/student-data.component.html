@@ -1,5 +1,5 @@
 <div class="container student-data">
-    
+
     <div class="row division-2">
         <div class="card student-data-card">
             <div class="container">
@@ -7,6 +7,7 @@
                     <p class="student-data-topic">Student Details</p>
                 </div>
 
+                <hr>
 
                 <div class="row card-div">
                     <div class="col-md-6">
@@ -19,7 +20,7 @@
                             </div>
                             <div class="col-md-9">
                                 <label class="student-data-card-data">
-                                    {{studentData | json}}
+                                    {{$any(studentData).firstName}}
                                 </label>
                             </div>
                         </div>
@@ -33,7 +34,8 @@
                             </div>
                             <div class="col-md-9">
                                 <label class="student-data-card-data">
-                                    First Name
+                                    {{$any(studentData).lastName}}
+
                                 </label>
                             </div>
                         </div>
@@ -52,7 +54,7 @@
                             </div>
                             <div class="col-md-9">
                                 <label class="student-data-card-data">
-                                    First Name
+                                    {{$any(studentData).age}}
                                 </label>
                             </div>
                         </div>
@@ -68,7 +70,7 @@
                             </div>
                             <div class="col-md-9">
                                 <label class="student-data-card-data">
-                                    First Name
+                                    {{$any(studentData).city}}
                                 </label>
                             </div>
                         </div>
@@ -83,12 +85,12 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <label class="student-data-card-label">
-                                    Height
+                                    Height 
                                 </label>
                             </div>
                             <div class="col-md-8">
                                 <label class="student-data-card-data">
-                                    First Name
+                                    {{$any(studentData).height}} cm
                                 </label>
                             </div>
 
@@ -104,7 +106,7 @@
                             </div>
                             <div class="col-md-8">
                                 <label class="student-data-card-data">
-                                    First Name
+                                    {{$any(studentData).weight}} kg
                                 </label>
                             </div>
 
@@ -122,9 +124,9 @@
                                 </label>
                             </div>
                             <div class="col-md-9">
-                                <label class="student-data-card-data">
-                                    First Name
-                                </label>
+                                <p class="student-data-card-data" *ngFor="let hobby of hobbies">
+                                    {{hobby.name}}
+                                </p>
                             </div>
                         </div>
                     </div>

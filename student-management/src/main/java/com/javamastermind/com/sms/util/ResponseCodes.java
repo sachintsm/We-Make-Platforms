@@ -7,5 +7,4 @@ public interface ResponseCodes {
 	String failiureToAdd = "291";
 	String failiureToUpdate = "292";
 	String failiureToDelete = "299";
-	String notFound = "293";
 }

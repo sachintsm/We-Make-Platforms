@@ -1,37 +1,34 @@
 .student-data {
     min-height: 600px;
 
-    .student-division-1{
+    .student-division-1 {
         margin-top: 50px;
     }
-    .student-topic{
+    .student-topic {
         color: #4e4e4e;
         font-size: 30px;
         font-weight: 500;
-
     }
-    .student-division-3{
+    .student-division-3 {
         margin-bottom: 20px;
     }
 
     .student-table-title-card {
         width: 100%;
         background-color: #287ffa;
-        
     }
     .student-table-title {
         color: #ffffff;
         font-size: 16px;
         font-weight: 500;
-        padding:  10px 5px 5px 5px;
+        padding: 10px 5px 5px 5px;
     }
 
-
-    .student-table-data-card{
+    .student-table-data-card {
         margin-top: 5px;
     }
 
-    .student-table-data-card:hover{
+    .student-table-data-card:hover {
         cursor: pointer;
         background-color: #0167ff1c;
         transition: 0.5s;
@@ -44,22 +41,22 @@
         padding: 5px 5px 0px 5px;
     }
 
-    .add-student-btn{
+    .add-student-btn {
         float: right;
         text-align: center;
         cursor: pointer;
     }
-    .student-action-btn-div{
+    .student-action-btn-div {
         padding: 5px;
     }
-    .student-action-btn{
-        height: 30px;   
-        width : 100%;
+    .student-action-btn {
+        height: 30px;
+        width: 100%;
     }
-    .stundet-label-text{
+    .stundet-label-text {
         margin-top: -10px;
     }
-    .student-noData{
+    .student-noData {
         text-align: center;
         margin: auto;
         padding: 10px 0px 10px 0px;
@@ -67,13 +64,28 @@
         color: #5c5c5c;
     }
 
-    .student-action-btn-view{
+    .student-action-btn-view {
         color: rgb(255, 193, 24);
     }
-    .student-action-btn-edit{
+    .student-action-btn-edit {
         color: rgb(82, 201, 3);
     }
-    .student-action-btn-delete{
+    .student-action-btn-delete {
         color: rgb(214, 24, 24);
+    }
+    .student-action-btn-view:hover {
+        transition:0.5s;
+        font-size: 18px;
+        color: rgb(207, 157, 20);
+    }
+    .student-action-btn-edit:hover {
+        transition:0.5s;
+        font-size: 18px;
+        color: rgb(58, 138, 5);
+    }
+    .student-action-btn-delete:hover {
+        transition:0.5s;
+        font-size: 18px;
+        color: rgb(133, 16, 16);
     }
 }
